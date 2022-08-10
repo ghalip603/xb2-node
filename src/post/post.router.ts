@@ -1,5 +1,6 @@
-import express from "express";
+import express from 'express';
 import * as postController from './post.controller';
+import {requestUrl} from "../app/app.middleware";
 
 const router = express.Router();
 
@@ -7,7 +8,7 @@ const router = express.Router();
  * 内容列表
  * **/
 
-router.get('/posts',postController.index);
+router.get('/posts',requestUrl,postController.index);
 
 
 /**
